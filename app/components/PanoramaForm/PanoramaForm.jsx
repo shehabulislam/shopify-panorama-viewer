@@ -1,8 +1,10 @@
 import { Box, Button, Card, Checkbox, ChoiceList, Form, FormLayout, TextField } from '@shopify/polaris';
 import UnitControl from '../fields/UnitControl';
+import { useLocation } from '@remix-run/react';
 
 export default function PanoramaForm({handleSubmit, data, handleChange, isLoading}){
 
+    const location = useLocation();
 
     return <>
         <Card gap="20px">
@@ -46,7 +48,7 @@ export default function PanoramaForm({handleSubmit, data, handleChange, isLoadin
                      
                         
                     <Box style={{display: 'flex', justifyContent: 'end',marginTop: '50px' }}>
-                        <Button loading={isLoading} fullWidth type="submit" submit variant='primary'>Create</Button>
+                        <Button loading={isLoading} fullWidth type="submit" submit variant='primary'>{location.pathname.includes('edit') ? 'Update' : 'Create'}</Button>
                     </Box>
                 </Form>
             </FormLayout>

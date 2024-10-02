@@ -1,5 +1,4 @@
-import { Link, useLocation, useNavigation } from '@remix-run/react';
-// import {Button, ButtonGroup, FullscreenBar, Text } from '@shopify/polaris';
+import { Link, useLocation } from '@remix-run/react';
 
 import styles from "./styles.module.css";
 import { TitleBar } from '@shopify/app-bridge-react';
@@ -7,9 +6,6 @@ import { TitleBar } from '@shopify/app-bridge-react';
 export default function Header({title = "Home"}){
 
   const location = useLocation();
-
-
-  console.log(location)
 
     return <div className={styles.header}>
         <TitleBar title={title} className={styles.header}>

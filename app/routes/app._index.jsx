@@ -1,6 +1,6 @@
 import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
-import {  Page,  Layout,  BlockStack, Divider, Button, Box, Card } from "@shopify/polaris";
+import {  useLoaderData } from "@remix-run/react";
+import {  Page,  Layout,  BlockStack,  Button} from "@shopify/polaris";
 import { authenticate } from "../shopify.server";
 // import PanoramaViewers from '../components/PanoramaViewers';
 import prisma from '../db.server';
@@ -13,8 +13,6 @@ import PanoramaViewersV2 from '../components/PanoramaViewers/PanoramaViewersV2';
 export default function Index() {
 
   const {viewers = [], subscription} = useLoaderData();
-  const [currentPage, setCurrentPage] = useState('home')
-
 
   const plan = useMemo(() => { 
     console.log('in memo')

@@ -1,10 +1,7 @@
-// import { json } from '@remix-run/node';
 import { Link, useActionData, useNavigation, useSubmit } from '@remix-run/react';
-import {Page, DataTable, Button, InlineStack, Grid, LegacyCard, Card, MediaCard, Box} from '@shopify/polaris';
+import { Button, InlineStack, Grid, Text} from '@shopify/polaris';
 import React, { useEffect, useState } from 'react';
 import useLoading from '../../hooks/useLoading';
-
-import './styles.css'
 
 import styles from './styles.module.css'
 
@@ -46,15 +43,21 @@ export default function PanoramaViewersV2({viewers}) {
         <>
         <Grid>
           {viewers.map(item => {
-
+ 
             return <>
-              <Grid.Cell columnSpan={{xs: 6, sm: 3, md: 3, lg: 4, xl: 3}}>
+              <Grid.Cell key={item.id} columnSpan={{xs: 6, sm: 3, md: 3, lg: 4, xl: 3}}>
                     <div className={`${styles.pan_single_item} pan_single_item`}> 
-                      <img  src={item.img_src  || 'https://cdn.pixabay.com/photo/2023/06/04/12/00/rose-8039502_1280.jpg'} alt='' />
-                      <div className={`${styles.pan_actions} pan_actions`} >
-                        <Link to={`/app/edit/${item.id}`}><Button disabled={isLoading} onClick={() => console.log('edit')}>Edit</Button></Link> 
-                        <Button loading={deletingItem === item.id} disabled={isLoading} variant='primary' tone="critical" onClick={() => deleteItem(item)} >Delete</Button>
-                      </div>
+                      <img width="100%" src={item.img_src  || 'https://cdn.pixabay.com/photo/2023/06/04/12/00/rose-8039502_1280.jpg'} alt='' />
+                        
+                        <div className="pan_details">
+                          <Text>{item.title}</Text> 
+                        </div>
+
+                        <div className={`${styles.pan_actions} pan_actions`} >
+                          <Link to={`/app/edit/${item.id}`}><Button disabled={isLoading} onClick={() => console.log('edit')}>Edit</Button></Link> 
+                          <Button loading={deletingItem === item.id} disabled={isLoading} variant='primary' tone="critical" onClick={() => deleteItem(item)} >Delete</Button> 
+                        </div>
+
                     </div>
               </Grid.Cell>
             </>
@@ -63,3 +66,4 @@ export default function PanoramaViewersV2({viewers}) {
         </>
   );
 }
+

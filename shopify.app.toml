@@ -3,7 +3,7 @@
 client_id = "962578609fea7a1d7cf849f8114d5ee3"
 name = "panorama-viewer"
 handle = "panorama-viewer"
-application_url = "https://strategies-manor-spin-announced.trycloudflare.com"
+application_url = "https://advertising-contract-coral-writer.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://strategies-manor-spin-announced.trycloudflare.com/auth/callback",
-  "https://strategies-manor-spin-announced.trycloudflare.com/auth/shopify/callback",
-  "https://strategies-manor-spin-announced.trycloudflare.com/api/auth/callback"
+  "https://advertising-contract-coral-writer.trycloudflare.com/auth/callback",
+  "https://advertising-contract-coral-writer.trycloudflare.com/auth/shopify/callback",
+  "https://advertising-contract-coral-writer.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

@@ -8,6 +8,9 @@ import Header from '../components/Header/Header';
 import useLoading from '../hooks/useLoading';
 import PanoramaForm from '../components/PanoramaForm/PanoramaForm';
 
+import pannelumJS from './../assets/js/pannellum.js?url';
+import pannelumStyles from './../assets/css/pannellum.css';
+
 export default function Create(){
 
     const [data, setData] = useState({type: 'image', }) 
@@ -79,4 +82,19 @@ export async function action({request, params}){
     } catch (error) {
         throw json(error)
     }
+}
+
+
+export function links(){
+
+    return [
+        {
+            rel: 'stylesheet',
+            href: pannelumStyles
+        },
+        {
+            type: 'text/javascript',
+            src: pannelumJS
+        }
+    ]
 }
